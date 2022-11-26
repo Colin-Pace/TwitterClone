@@ -1,0 +1,14 @@
+#whatsHappening {
+  margin-top: 20px;
+  background-color: rgb(240, 240, 240);
+  border: none;
+  border-radius: 20px;
+  height: 440px;
+  width: 300px;
+  padding-left: 15px;
+}
+
+#wHTitle {
+  color: black;
+  font-size: 25px;
+}

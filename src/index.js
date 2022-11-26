@@ -15,8 +15,8 @@ root.render(
                                       App
                     /                 |             \
                SidebarLeft          Center        SidebarRight
-                /       |         |       |
-            Tabs        Id      Home    Scroll
+                /       |         |       |                 |
+            Tabs        Id      Home    Scroll            What's happening
                                           |
                                         Tweets
 

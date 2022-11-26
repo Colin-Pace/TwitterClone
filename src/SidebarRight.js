@@ -1,13 +1,13 @@
 import './SidebarRight.css';
+import WhatsHappening from './WhatsHappening';
 
 function SidebarRight() {
   return (
     <div className="SidebarRight">
       <input id = 'searchTwitter' type = 'text' placeholder = 'Search Twitter'></input>
-      <div id = 'whatsHappening'>
-        <p id = 'wHTitle'>What's happening</p>
-
-      </div>
+      
+      <WhatsHappening />
+    
       <div id = 'whoToFollow'> 
         <p id = 'wTFTitle'>Who to follow</p>
       </div>
