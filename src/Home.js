@@ -1,16 +1,16 @@
 import './Home.css';
 import {useState} from 'react';
 
-function Home() {
-  const [message, setMessage] = useState('');
+function Home(props) {
+  const [tweet, setTweet] = useState('');
 
   const handleChange = event => {
-    setMessage(event.target.value);
+    setTweet(event.target.value);
   };
 
   const handleClick = event => {
     event.preventDefault();
-    console.log(message);
+    props.getTweet(tweet);
   };
 
   return (
@@ -23,7 +23,7 @@ function Home() {
           type = 'text' 
           placeholder = "What's happening?"
           onChange={handleChange}
-          value={message}
+          value={tweet}
           autoComplete="off"
         />
       </div>

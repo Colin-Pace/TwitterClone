@@ -9,3 +9,18 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+/* Component tree
+
+                                      App
+                    /                 |             \
+               SidebarLeft          Center        SidebarRight
+                /       |         |       |
+            Tabs        Id      Home    Scroll
+                                          |
+                                        Tweets
+
+
+
+
+*/

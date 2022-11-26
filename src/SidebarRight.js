@@ -8,7 +8,7 @@ function SidebarRight() {
         <p id = 'wHTitle'>What's happening</p>
 
       </div>
-      <div id = 'whoToFollow'>
+      <div id = 'whoToFollow'> 
         <p id = 'wTFTitle'>Who to follow</p>
       </div>
     </div>
