@@ -1,0 +1,29 @@
+.Id {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 30%;
+  margin-top: 100px;
+}
+
+.Id:hover {
+  background-color: rgb(240, 240, 240);
+  border-radius: 25px;
+  transition-delay: .2s;
+}
+
+#accountImage {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+
+#accountName {
+  font-size: 18px;
+}
+
+#threeDots {
+  margin-left: 10px;
+  height: 40px;
+  width: 40px;
+}

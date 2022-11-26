@@ -1,0 +1,31 @@
+#bird {
+  margin-left: 30%;
+  margin-top: 20px;
+}
+
+#menuItems {
+  margin-left: 30%;
+  font-size: 22px;
+}
+
+#menuItems p {
+  padding: 5px;
+}
+
+#menuItems p:hover {
+  background-color: rgb(240, 240, 240);
+  border-radius: 25px;
+  width: 50%;
+  transition-delay: .2s;
+}
+
+#tweetButton {
+  background-color: rgb(36, 138, 255);
+  color: white;
+  border-radius: 25px;
+  height: 50px;
+  width: 240px;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+}
