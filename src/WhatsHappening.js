@@ -27,7 +27,7 @@ function WhatsHappening() {
   }
 
   useEffect(() => {
-    getNews();
+    //getNews();
   });
 
   return (

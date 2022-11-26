@@ -12,19 +12,21 @@ function Home(props) {
     event.preventDefault();
     props.getTweet(tweet);
   };
-
+ 
   return (
     <div className="Home">
       <p id = 'homeTitle'>Home</p>
       <div>
         <img id = 'accountPic' src = {require('./account.png')}/>
-        <input 
-          id = 'tweetInput' 
-          type = 'text' 
+        <textarea 
+          id = 'tweetInput'
           placeholder = "What's happening?"
           onChange={handleChange}
           value={tweet}
           autoComplete="off"
+          rows = "6"
+          cols = "30"
+          maxlength = "280"
         />
       </div>
       <button 

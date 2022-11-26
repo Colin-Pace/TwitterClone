@@ -1,7 +1,7 @@
 .Home {
   padding: 15px;
   border-bottom: 1px solid rgb(228, 228, 228);
-  padding-bottom: 60px;
+  padding-bottom: 80px;
 }
 
 #homeTitle {
@@ -17,8 +17,9 @@
 #tweetInput {
   border: none;
   height: 80px;
-  font-size: 30px;
+  font-size: 22px;
   padding-left: 15px;
+  padding-top: 40px;
 }
 
 #tweetInput:focus {
@@ -35,4 +36,5 @@
   font-size: 20px;
   border: none;
   float: right;
+  margin-top: 20px;
 }
