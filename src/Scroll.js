@@ -8,7 +8,9 @@ function Scroll(props) {
         <div id = 'tweetsContainer'>
           <Tweets
             tweet = {props.tweet}
-          />
+            tweets = {props.tweets}
+            handleCommentClick = {props.handleCommentClick}
+          /> 
         </div>
       }
     </div>

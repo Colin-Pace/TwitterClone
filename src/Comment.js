@@ -1,8 +1,12 @@
 import './Comment.css';
 
-function Comment() {
+function Comment(props) {
+
+  console.log(props.editId);
+
   return (
     <div className="Comment">
+      Comment page
     </div>
   );
 }

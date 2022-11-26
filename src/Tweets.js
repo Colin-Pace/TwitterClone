@@ -2,34 +2,41 @@ import './Tweets.css';
 import {useState, useEffect} from 'react';
 
 function Tweets(props) {
-  let [tweets, setTweets] = useState(undefined);
-
-  // const makeTweets = function() {
-
-  const dummyTweet = function() {
-
+  const handleCommentClick = function(id) {
+    //console.log("test comment click", id);
+    props.handleCommentClick(id);
   }
 
+  //<button onClick={() => sayHello('James')}>Greet</button>
 
-  //   const data = props.data;
-  //   for (let i = 0; i < data.length; i++) {
-  //     const tweet = <div>
-  //                     <img src = {require('./account.png')}/>
-  //                     <p>{props.para}</p>
-  //                   </div>;
-  //   setTweets([...tweet]);
-  //   }
-  // }
+  const makeTweets = function() {
+    const tweets = [];
+    const data = props.tweets;
+    if (data !== undefined) {
+      for (let i = data.length - 1; i > -1; i--) {
+        const tweet = <div id = 'tweet'>
+                        <div id = 'tweetImageAndText'>
+                          <img id = 'tweetImage' src = {require('./account.png')}/>
+                          <p id = 'tweetText'>{data[i]['tweet']}</p>
+                        </div>
+                        <img 
+                          id = 'commentBubble' 
+                          src = {require('./comment.png')}
+                          onClick = {() => handleCommentClick(data[i]['id'])}
+                        />
+                      </div>;
+        tweets.push(tweet);
+      }
+    }
+    return tweets;
+  }
   
-  useEffect(() => {
-    console.log("test tweets component");
-  });
-
+  const tweets = makeTweets();
   return (
     <div className="Tweets">
       {tweets}
     </div>
   );
-}
+} 
 
 export default Tweets;

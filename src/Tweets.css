@@ -1,0 +1,32 @@
+#tweet {
+  border-bottom: 1px solid rgb(228, 228, 228);
+  padding: 15px;
+}
+
+#tweetImageAndText {
+  display: flex;
+  flex-direction: row;
+  padding-left: 10px;
+}
+
+#tweetImage {
+  height: 50px;
+  width: 50px;
+}
+
+#tweetText {
+  margin-left: 10px;
+}
+
+#commentBubble {
+  height: 35px;
+  width: 35px;
+  margin-left: 60px;
+  padding: 5px;
+}
+
+#commentBubble:hover {
+  background-color: rgb(131, 190, 246);
+  border-radius: 50px;
+  transition-delay: .3s;
+}

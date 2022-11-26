@@ -8,9 +8,26 @@ function Home(props) {
     setTweet(event.target.value);
   };
 
-  const handleClick = event => {
-    event.preventDefault();
-    props.getTweet(tweet);
+  // const handleClick = event => {
+  //   event.preventDefault();
+  //   props.getTweet(tweet);
+  // };
+
+  const handleClick = function(e) {
+    e.preventDefault(); 
+    const newEntry = {
+      "id": props.id,
+      "tweet": tweet,
+    };
+
+    //console.log(newEntry);
+    setTweet("");
+
+    let storedData = localStorage.getItem("tweets");
+    storedData = JSON.parse(storedData);
+    storedData.push(newEntry);
+    localStorage.setItem("tweets", JSON.stringify(storedData));
+    props.populateTweets();
   };
  
   return (
