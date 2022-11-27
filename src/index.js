@@ -24,5 +24,7 @@ Register  Login
                                     Tweets    Head|   \
                                                 Reply |
                                                     Thread
+                                                      |
+                                                    Comments
 
 */

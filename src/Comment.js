@@ -8,7 +8,7 @@ function Comment(props) {
   let [author, setAuthor] = useState(undefined);
   let [tweet, setTweet] = useState(undefined);
   let [thread, setThread] = useState(undefined);
-
+  
   const setUpPage = function() {
     let storedData = localStorage.getItem("tweets");
     storedData = JSON.parse(storedData);
@@ -20,10 +20,11 @@ function Comment(props) {
         setAuthor(storedData[i]['userName']);
       }
     }
+    console.log(storedData);
   }
 
   const populateComments = function() {
-    setUpPage(); //should trigger rerender after reply
+    setUpPage();
   }
 
   useEffect(() => { 
