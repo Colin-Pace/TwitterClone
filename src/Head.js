@@ -1,16 +1,25 @@
 import './Head.css';
 
 function Head(props) {
-  console.log(props);
+  const handleGoBackClick = function() {
+    handleGoBackClick = props.handleGoBackClick();
+  }
+
   return (
     <div className="Head">
-      <p>Thread</p>
-      <p>
-        {
-          // props.tweet['tweet'] !== undefined ?      // causes error
-          //   props.tweet['tweet'] : ''
-        }
-      </p>
+      <div id = 'goBackAndTitle'>
+        <img 
+          id = 'goBack' 
+          src = {require('./goBack.png')}
+          onClick = {handleGoBackClick}
+        />
+        <p>Thread</p>
+      </div> 
+      <div id = 'headPicAndAuthor'>
+        <img id = 'headPic' src = {require('./account.png')}/>
+        <p>{props.author}</p>
+      </div>
+      <p id = 'headTweet'>{props.tweet}</p>
     </div>
   );
 }

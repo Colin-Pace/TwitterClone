@@ -1,3 +1,32 @@
 .Head {
   border-bottom: 1px solid rgb(228, 228, 228);
+  padding-left: 15px;
+}
+
+#goBackAndTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#goBack {
+  height: 35px;
+  width: 35px;
+  margin-right: 15px;
+}
+
+#headPicAndAuthor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#headPic {
+  height: 35px;
+  width: 35px;
+  margin-right: 15px;
+}
+
+#headTweet {
+  margin-left: 50px;
 }

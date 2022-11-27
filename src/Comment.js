@@ -5,22 +5,21 @@ import Reply from './Reply';
 import Thread from './Thread';
 
 function Comment(props) {
+  let [author, setAuthor] = useState(undefined);
   let [tweet, setTweet] = useState(undefined);
   let [thread, setThread] = useState(undefined);
 
   const setUpPage = function() {
     let storedData = localStorage.getItem("tweets");
     storedData = JSON.parse(storedData);
-    let tweetText = undefined;
-    let comments = undefined
+
     for (let i = 0; i < storedData.length; i++) {
       if (storedData[i]['id'] === props.editId) {
-        tweetText = storedData[i]['tweet'];
-        comments = storedData[i]['comments'];
+        setTweet(storedData[i]['tweet']);
+        setThread(storedData[i]['comments']);
+        setAuthor(storedData[i]['userName']);
       }
     }
-    setTweet(tweetText);
-    setThread(comments);
   }
 
   useEffect(() => { 
@@ -31,6 +30,8 @@ function Comment(props) {
     <div className="Comment">
       <Head 
         tweet = {tweet}
+        author = {author}
+        handleGoBackClick = {props.handleGoBackClick}
       />
       <Reply />
       <Thread 

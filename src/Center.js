@@ -37,6 +37,10 @@ function Center(props) {
     setTweets(storedData);
   }; 
 
+  const handleGoBackClick = function() {
+    setHomeAndScroll(true);
+  }
+
   useEffect(() => {
     let storedData = localStorage.getItem("tweets");
     if (storedData === undefined || storedData === null) {
@@ -67,6 +71,7 @@ function Center(props) {
           <div>
             <Comment
               editId = {editId}
+              handleGoBackClick = {handleGoBackClick}
             />
           </div>
       }

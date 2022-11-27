@@ -28,7 +28,7 @@ function WhatsHappening() {
 			})
 
       .then(response => {
-        console.log(response["articles"]);
+        ///console.log(response["articles"]);
         //makeCards(response);
       })
 
@@ -38,7 +38,7 @@ function WhatsHappening() {
   }
 
   useEffect(() => {
-    getNews();
+    //getNews();
   }); 
 
   return (
