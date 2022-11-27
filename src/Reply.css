@@ -1,0 +1,12 @@
+.Reply {
+  border-bottom: 1px solid rgb(228, 228, 228);
+  padding-bottom: 100px;
+}
+
+#imgAndArea {
+  padding-left: 10px;
+}
+
+#homeTweetButton {
+  margin-right: 10px;
+}

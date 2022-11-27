@@ -14,7 +14,7 @@ function Home(props) {
       "id": props.id,
       'userName': props.userName,
       "tweet": tweet,
-      "comments": undefined
+      "comments": []
     };
 
     setTweet(""); 

@@ -72,6 +72,7 @@ function Center(props) {
             <Comment
               editId = {editId}
               handleGoBackClick = {handleGoBackClick}
+              userName = {props.userName}
             />
           </div>
       }

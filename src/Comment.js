@@ -33,7 +33,10 @@ function Comment(props) {
         author = {author}
         handleGoBackClick = {props.handleGoBackClick}
       />
-      <Reply />
+      <Reply 
+        editId = {props.editId}
+        userName = {props.userName}
+      />
       <Thread 
         thread = {thread}
       />

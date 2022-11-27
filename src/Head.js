@@ -13,7 +13,7 @@ function Head(props) {
           src = {require('./goBack.png')}
           onClick = {handleGoBackClick}
         />
-        <p>Thread</p>
+        <p id = 'headTitle'>Thread</p>
       </div> 
       <div id = 'headPicAndAuthor'>
         <img id = 'headPic' src = {require('./account.png')}/>
