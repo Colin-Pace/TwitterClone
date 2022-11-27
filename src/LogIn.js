@@ -33,12 +33,14 @@ function LogIn(props) {
             id="uname" 
             name="uname"
             placeholder = 'User name'
+            maxlength="10"
           /><br/>
           <input 
             type="text" 
             id="pword" 
             name="pword"
             placeholder = 'Password'
+            maxlength="10"
           /><br/><br/>
           <input 
             id = 'logInButton' 

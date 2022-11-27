@@ -14,8 +14,12 @@
   width: 50px;
 }
 
-#tweetText {
+#userName {
   margin-left: 10px;
+}
+
+#tweetText {
+  margin-left: 70px;
 }
 
 #commentBubble {

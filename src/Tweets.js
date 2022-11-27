@@ -13,13 +13,14 @@ function Tweets(props) {
   const makeTweets = function() {
     const tweets = [];
     const data = props.tweets;
-    if (data !== undefined) {
+    if (data !== undefined) { 
       for (let i = data.length - 1; i > -1; i--) {
         const tweet = <div id = 'tweet'>
                         <div id = 'tweetImageAndText'>
                           <img id = 'tweetImage' src = {require('./account.png')}/>
-                          <p id = 'tweetText'>{data[i]['tweet']}</p>
+                          <p id = 'userName'>{data[i]['userName']}</p>
                         </div>
+                        <p id = 'tweetText'>{data[i]['tweet']}</p>
                         <img 
                           id = 'commentBubble' 
                           src = {require('./comment.png')}

@@ -2,11 +2,13 @@ import './SidebarLeft.css';
 import Tabs from './Tabs';
 import Id from './Id';
 
-function SidebarLeft() {
+function SidebarLeft(props) {
   return (
     <div className="SidebarLeft">
       <Tabs/>
-      <Id/>
+      <Id 
+        userName = {props.userName}
+      />
     </div>
   );
 }

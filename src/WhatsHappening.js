@@ -5,6 +5,16 @@ import React, { useState, useEffect } from 'react';
 function WhatsHappening() {
   //API key = eec40e4ada8b4a55a1259ccd6274af14
 
+  const makeCards = function(data) {
+    const cards = [];
+    for (let i = 0; i < 5; i++) {
+
+      const card = <div>
+                     
+                   </div>
+    }
+  }
+
   const getNews = function() {
     const url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=eec40e4ada8b4a55a1259ccd6274af14";
 
@@ -18,7 +28,8 @@ function WhatsHappening() {
 			})
 
       .then(response => {
-        console.log(response);
+        console.log(response["articles"]);
+        //makeCards(response);
       })
 
 			.catch(error => {
@@ -27,8 +38,8 @@ function WhatsHappening() {
   }
 
   useEffect(() => {
-    //getNews();
-  });
+    getNews();
+  }); 
 
   return (
     <div className="WhatsHappening">

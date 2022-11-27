@@ -31,13 +31,15 @@ function Register(props) {
             type="text" 
             id="uname" 
             name="uname"
-            placeholder = 'User name'  
+            placeholder = 'User name'
+            maxlength="10"  
           /><br/>
           <input 
             type="text" 
             id="pword" 
             name="pword"
-            placeholder = 'Password'  
+            placeholder = 'Password' 
+            maxlength="10" 
           /><br/><br/>
           <input 
             type="submit" 

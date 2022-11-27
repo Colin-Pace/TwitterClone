@@ -15,6 +15,7 @@ import Register from './Register';
 function App() {
   let [loggedIn, setLoggedIn] = useState(false);
   let [id, setId] = useState(0);
+  let [userName, setUserName] = useState(undefined);
 
   const logInFormSubmit = function(userNameAndPassword) {
     let storedData = localStorage.getItem("accounts");
@@ -28,6 +29,7 @@ function App() {
       if (storedData[i]['name'] === userNameAndPassword[0] &&
           storedData[i]['password'] === userNameAndPassword[1]) {
             setLoggedIn(true);
+            setUserName(userNameAndPassword[0]);
       }
     }
   }
@@ -67,8 +69,12 @@ function App() {
   if (loggedIn === true) {
     return (
       <div className="App">
-        <SidebarLeft/>
-        <Center/>
+        <SidebarLeft 
+          userName = {userName} 
+        />
+        <Center
+          userName = {userName}
+        />
         <SidebarRight/>      
       </div>
     ); 

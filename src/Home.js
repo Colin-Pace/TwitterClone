@@ -12,11 +12,12 @@ function Home(props) {
     e.preventDefault(); 
     const newEntry = {
       "id": props.id,
+      'userName': props.userName,
       "tweet": tweet,
       "comments": undefined
     };
 
-    setTweet("");
+    setTweet(""); 
 
     let storedData = localStorage.getItem("tweets");
     storedData = JSON.parse(storedData);

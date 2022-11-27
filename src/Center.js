@@ -4,7 +4,7 @@ import Scroll from './Scroll';
 import {useState, useEffect} from 'react';
 import Comment from './Comment';
 
-function Center() {
+function Center(props) {
   let [tweet, setTweet] = useState(undefined);
   let [homeAndScroll, setHomeAndScroll] = useState(true);
   let [tweets, setTweets] = useState(undefined);
@@ -55,6 +55,7 @@ function Center() {
               getTweet = {getTweet}
               id = {id}
               populateTweets = {populateTweets}
+              userName = {props.userName}
             />
             <Scroll
               tweet = {tweet}
