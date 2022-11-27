@@ -3,11 +3,12 @@ import {useState, useEffect} from 'react';
 
 function Tweets(props) {
   const handleCommentClick = function(id) {
-    //console.log("test comment click", id);
-    props.handleCommentClick(id);
+   props.handleCommentClick(id);
   }
 
-  //<button onClick={() => sayHello('James')}>Greet</button>
+  const optionsClicked = function() {
+    
+  }
 
   const makeTweets = function() {
     const tweets = [];
@@ -23,6 +24,11 @@ function Tweets(props) {
                           id = 'commentBubble' 
                           src = {require('./comment.png')}
                           onClick = {() => handleCommentClick(data[i]['id'])}
+                        />
+                        <img 
+                          id = 'tweetThreeDots' 
+                          src = {require('./threeDots.png')}
+                          onClick = {optionsClicked}
                         />
                       </div>;
         tweets.push(tweet);

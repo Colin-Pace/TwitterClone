@@ -13,13 +13,17 @@ root.render(
 /* Component tree
 
                                       App
+
+    /       /
+Register  Login
                     /                 |              \
                SidebarLeft          Center            SidebarRight
                 /       |         |    |   \                     |
             Tabs        Id      Home Scroll (Comment)           What's happening
-                                      |
-                                    Tweets
-
+                                      |        |  | \
+                                    Tweets    Head|   \
+                                                Reply |
+                                                    Thread
 
 
 

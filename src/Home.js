@@ -8,19 +8,14 @@ function Home(props) {
     setTweet(event.target.value);
   };
 
-  // const handleClick = event => {
-  //   event.preventDefault();
-  //   props.getTweet(tweet);
-  // };
-
   const handleClick = function(e) {
     e.preventDefault(); 
     const newEntry = {
       "id": props.id,
       "tweet": tweet,
+      "comments": undefined
     };
 
-    //console.log(newEntry);
     setTweet("");
 
     let storedData = localStorage.getItem("tweets");

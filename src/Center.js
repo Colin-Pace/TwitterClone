@@ -12,16 +12,15 @@ function Center() {
   let [editId, setEditId] = useState(undefined);
 
   const getTweet = function(tweet) {
-    setTweet(tweet);
+    setTweet(tweet); 
   }
 
   const handleCommentClick = function(id) {
-    //console.log(id);
     setEditId(id);
-    //setHomeAndScroll(false);
+    setHomeAndScroll(false);
   }
 
-  const populateTweets = function() {
+  const populateTweets = function() { 
     let storedData = localStorage.getItem("tweets");
     if (storedData.length === null || storedData === 0) {
       localStorage.setItem("tweets", JSON.stringify([]));
@@ -44,7 +43,6 @@ function Center() {
       localStorage.setItem("tweets", JSON.stringify([]));
     }
 
-    //console.log(storedData);
     populateTweets();
   }, []);
 
