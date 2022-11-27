@@ -20,7 +20,6 @@ function Reply(props) {
     }
     
     let tweet = undefined;
-    //console.log(storedData);
     for (let i = 0; i < storedData.length; i++) {
       if (storedData[i]['id'] === props.editId) {
         tweet = storedData[i];
@@ -30,7 +29,7 @@ function Reply(props) {
           if (tweet['comments']["id"] > largest) {
             largest = tweet['comments']["id"];
           }
-          setID(largest + 1);
+          setID(largest + 1); // not working
         }
         
         const newComment = {
@@ -44,11 +43,9 @@ function Reply(props) {
       }
     }
 
-    //console.log(storedData);
-
     setReply(""); 
     localStorage.setItem("tweets", JSON.stringify(storedData));
-    //props.populateComments();
+    props.populateComments();
   };
 
   return (

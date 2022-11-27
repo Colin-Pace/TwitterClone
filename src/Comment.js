@@ -22,6 +22,10 @@ function Comment(props) {
     }
   }
 
+  const populateComments = function() {
+    setUpPage(); //should trigger rerender after reply
+  }
+
   useEffect(() => { 
     setUpPage(); 
   }, []);
@@ -36,9 +40,11 @@ function Comment(props) {
       <Reply 
         editId = {props.editId}
         userName = {props.userName}
+        populateComments = {populateComments}
       />
       <Thread 
         thread = {thread}
+        editId = {props.editId}
       />
     </div>
   );

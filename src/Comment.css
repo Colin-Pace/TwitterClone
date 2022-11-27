@@ -1,0 +1,27 @@
+#comment {
+  padding: 15px;
+  border-bottom: 1px solid rgb(228, 228, 228);
+  padding-bottom: 40px;
+}
+
+#commentImgAndAuthor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#commentAccountImg {
+  height: 35px;
+  width: 35px;
+  margin-right: 10px;
+}
+
+#commentText {
+  margin-left: 45px;
+}
+
+#commentEditButton {
+  height: 35px;
+  width: 35px;
+  float: right;
+}
