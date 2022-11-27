@@ -3,7 +3,7 @@ import {useState} from 'react';
 
 function Reply(props) {
   const [reply, setReply] = useState('');
-  let [id, setID] = useState(0);
+  //let [id, setID] = useState(0);
 
   const handleChange = event => {
     setReply(event.target.value);
@@ -31,10 +31,10 @@ function Reply(props) {
           }
         }
 
-        setID(largest + 1); // not working
+        //setID(largest + 1); // not working
          
         const newComment = {
-          "id": id,
+          //"id": id,
           'userName': props.userName,
           "comment": reply,
         };

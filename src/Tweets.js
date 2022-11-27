@@ -6,8 +6,8 @@ function Tweets(props) {
    props.handleCommentClick(id);
   }
 
-  const optionsClicked = function() {
-    
+  const optionsClick = function(id) {
+    props.optionsClick(id);
   }
 
   const makeTweets = function() {
@@ -29,7 +29,7 @@ function Tweets(props) {
                         <img 
                           id = 'tweetThreeDots' 
                           src = {require('./threeDots.png')}
-                          onClick = {optionsClicked}
+                          onClick = {() => optionsClick(data[i]['id'])}
                         />
                       </div>;
         tweets.push(tweet);

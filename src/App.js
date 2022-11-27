@@ -66,7 +66,7 @@ function App() {
     }
   }, []);
 
-  if (loggedIn === true) {
+  if (loggedIn === true) { 
     return (
       <div className="App">
         <SidebarLeft 

@@ -20,6 +20,26 @@ function Center(props) {
     setHomeAndScroll(false);
   }
 
+  const handleOptionsClick = function(id) {
+    let storedData = localStorage.getItem("tweets");
+    let result = [];
+    if (storedData.length === null || storedData === 0) {
+      localStorage.setItem("tweets", JSON.stringify([]));
+    } else {
+      storedData = JSON.parse(storedData);
+      for (let i = 0; i < storedData.length; i++) {
+        if (storedData[i]['id'] === id) {
+          continue;
+        } else {
+          result.push(storedData[i]);
+          //console.log(result);
+        }
+      }
+    }
+    localStorage.setItem("tweets", JSON.stringify(result));
+    populateTweets();
+  }
+ 
   const populateTweets = function() { 
     let storedData = localStorage.getItem("tweets");
     if (storedData.length === null || storedData === 0) {
@@ -65,6 +85,7 @@ function Center(props) {
               tweet = {tweet}
               tweets = {tweets}
               handleCommentClick = {handleCommentClick}
+              optionsClick = {handleOptionsClick}
             />
           </div>
         :
