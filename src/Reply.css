@@ -10,3 +10,7 @@
 #homeTweetButton {
   margin-right: 10px;
 }
+
+#passwordInfo {
+  max-width: 300px;
+}

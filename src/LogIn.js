@@ -1,22 +1,26 @@
 import './LogIn.css';
 import { Link } from "react-router-dom";
+import {useState} from 'react';
 
 function LogIn(props) {
+  let [userName, setUserName] = useState('');
+  let [password, setPassword] = useState('');
+
+  const handleNameChange = event => {
+    setUserName(event.target.value);
+  };
+
+  const handlePasswordChange = event => {
+    setPassword(event.target.value);
+  };
+
   const formSubmit = function(e) {
     e.preventDefault();
-
     const userNameAndPassword = [];
-
-    const userName = e.target.uname.value;
-    const password = e.target.pword.value;
-
     userNameAndPassword.push(userName, password);
-
-    e.target.uname.value = "";
-    e.target.pword.value = ""; 
-
+    setUserName('');
+    setPassword('');
     props.logInFormSubmit(userNameAndPassword);
-    //console.log(userNameAndPassword);
   }
 
   return (
@@ -34,6 +38,7 @@ function LogIn(props) {
             name="uname"
             placeholder = 'User name'
             maxlength="10"
+            onChange={handleNameChange}
           /><br/>
           <input 
             type="text" 
@@ -41,6 +46,7 @@ function LogIn(props) {
             name="pword"
             placeholder = 'Password'
             maxlength="10"
+            onChange={handlePasswordChange}
           /><br/><br/>
           <input 
             id = 'logInButton' 

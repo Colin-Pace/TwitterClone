@@ -20,7 +20,6 @@ function Comment(props) {
         setAuthor(storedData[i]['userName']);
       }
     }
-    console.log(storedData);
   }
 
   const populateComments = function() {

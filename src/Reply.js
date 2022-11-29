@@ -2,8 +2,9 @@ import './Reply.css';
 import {useState} from 'react';
 
 function Reply(props) {
-  const [reply, setReply] = useState('');
-  //let [id, setID] = useState(0);
+  let [reply, setReply] = useState('');
+  let [id, setId] = useState(0);
+  let [commentCount, setCommentCount] = useState(0);
 
   const handleChange = event => {
     setReply(event.target.value);
@@ -22,25 +23,28 @@ function Reply(props) {
     let tweet = undefined;
     for (let i = 0; i < storedData.length; i++) {
       if (storedData[i]['id'] === props.editId) {
-        tweet = storedData[i];
+        tweet = storedData[i]; 
 
-        let largest = 0;
-        for (let j = 0; j < tweet['comments'].length; j++) {  
-          if (tweet['comments']["id"] > largest) {
-            largest = tweet['comments']["id"];
-          }
-        }
-
-        //setID(largest + 1); // not working
-         
         const newComment = {
-          //"id": id,
+          "id": id, 
           'userName': props.userName,
           "comment": reply,
         };
 
-        tweet['comments'].push(newComment);
+        let largest = 0;
+        for (let j = 0; j < tweet['comments'].length; j++) {
+          if (tweet['comments'][j]['id'] > largest) {
+            largest = tweet['comments'][j]['id'];
+          }
+        }
 
+        setId(largest + 1);
+
+        
+
+        tweet['comments'].push(newComment);
+        //setCommentCount(tweet['comments'].length);
+        //console.log(newComment);
       }
     }
 

@@ -1,5 +1,4 @@
 import './Tweets.css';
-import {useState, useEffect} from 'react';
 
 function Tweets(props) {
   const handleCommentClick = function(id) {

@@ -32,7 +32,6 @@ function Center(props) {
           continue;
         } else {
           result.push(storedData[i]);
-          //console.log(result);
         }
       }
     }

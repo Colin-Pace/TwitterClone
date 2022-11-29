@@ -2,7 +2,7 @@ import './Home.css';
 import {useState} from 'react';
 
 function Home(props) {
-  const [tweet, setTweet] = useState('');
+  let [tweet, setTweet] = useState('');
 
   const handleChange = event => {
     setTweet(event.target.value);

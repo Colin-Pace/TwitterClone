@@ -2,6 +2,10 @@ import './Thread.css';
 import Comments from './Comments';
 
 function Thread(props) {
+  const optionsClick = function() {
+     // needs ID
+  }
+
   const makeComments = function() {
     let storedData = localStorage.getItem("tweets");
     if (storedData.length === null || storedData === 0) {
@@ -25,6 +29,7 @@ function Thread(props) {
     <div className="Thread">
       <Comments
         comments = {comments}
+        optionsClick = {optionsClick}
       />
     </div>
   );
