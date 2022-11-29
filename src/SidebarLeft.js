@@ -8,6 +8,7 @@ function SidebarLeft(props) {
       <Tabs/>
       <Id 
         userName = {props.userName}
+        logOutClick = {props.logOutClick}
       />
     </div>
   );

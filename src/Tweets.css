@@ -35,8 +35,9 @@
   transition-delay: .3s;
 }
 
-#tweetThreeDots {
-  height: 35px;
-  width: 35px;
+#deleteButton {
+  height: 15px;
+  width: 15px;
   float: right;
+  margin-top: 15px;
 }

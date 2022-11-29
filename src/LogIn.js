@@ -34,7 +34,7 @@ function LogIn(props) {
         <form onSubmit = {formSubmit}>
           <input 
             type="text" 
-            id="uname" 
+            id="logInUname" 
             name="uname"
             placeholder = 'User name'
             maxlength="10"
@@ -42,7 +42,7 @@ function LogIn(props) {
           /><br/>
           <input 
             type="text" 
-            id="pword" 
+            id="logInPword" 
             name="pword"
             placeholder = 'Password'
             maxlength="10"

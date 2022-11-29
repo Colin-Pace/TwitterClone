@@ -59,6 +59,10 @@ function App() {
     localStorage.setItem("accounts", JSON.stringify(storedData));
   }
 
+  const logOutClick = function() {
+    setLoggedIn(false);
+  }
+
   useEffect(() => {
     let storedData = localStorage.getItem("accounts");
     if (storedData === undefined || storedData === null) {
@@ -71,6 +75,7 @@ function App() {
       <div className="App">
         <SidebarLeft 
           userName = {userName} 
+          logOutClick = {logOutClick}
         />
         <Center
           userName = {userName}

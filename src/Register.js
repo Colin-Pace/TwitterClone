@@ -114,19 +114,50 @@ function Register(props) {
   let [userName, setUserName] = useState('');
   let [password, setPassword] = useState('');
   let [toolTip, setToolTip] = useState(false);
+  let [messages, setMessages] = useState('');
 
   const handleNameChange = event => {
     setUserName(event.target.value);
+    setMessages('');
   };
 
   const handlePasswordChange = event => {
-    console.log(isValidPassword(event.target.value));
-    if (isValidPassword(event.target.value) === true) {
+    //console.log(isValidPassword(event.target.value));
+    const remaining = isValidPassword(event.target.value);
+    
+    if (remaining === true) {
       document.getElementById('pword').style.border = '1px solid green';
+      setMessages('');
     } else {
       document.getElementById('pword').style.border = '1px solid red';
+      //setMessages(remaining)
+      const result = [];
+      for (let i = 0; i < remaining.length; i++) {
+        const message = <p>
+                          {remaining[i]}
+                        </p>
+        result.push(message);
+      }
+
+      setMessages(result);
     }
   };
+
+  const onPasswordFocus = function() {
+    setToolTip(true);
+  }
+
+  const onPasswordBlur = function() {
+    //setToolTip(false);
+
+  }
+
+  const strongPassword = function() {
+    const pw = generatePassword();
+    document.getElementById('pword').value = pw;
+    document.getElementById('pword').style.border = '1px solid green';
+    setMessages('');
+  }
 
   const checkForExistingUserName = function(userName) {
     let storedData = localStorage.getItem("accounts");
@@ -145,31 +176,15 @@ function Register(props) {
     e.preventDefault();
     const userNameAndPassword = [];
     userNameAndPassword.push(userName, password);
-
     const userNameAlreadyExists = checkForExistingUserName(userName);
 
     if (userNameAlreadyExists === true) {
-      console.log("User name already exists");
+      setMessages("User name already exists");
     } else {
     setUserName('');
     setPassword('');
     props.registerFormSubmit(userNameAndPassword);
     }
-  }
-
-  const onPasswordFocus = function() {
-    setToolTip(true);
-  }
-
-  const onPasswordBlur = function() {
-    //setToolTip(false);
-
-  }
-
-  const strongPassword = function() {
-    const pw = generatePassword();
-    document.getElementById('pword').value = pw;
-    document.getElementById('pword').style.border = '1px solid green';
   }
 
 
@@ -228,8 +243,13 @@ function Register(props) {
           to = "/"
           id = 'logInLink'
         >Login</Link>
-
+ 
       </div>
+
+        <p
+          id = 'messages'
+        >{messages}</p>
+
     </div>
   );
 }

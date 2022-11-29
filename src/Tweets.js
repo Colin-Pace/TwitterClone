@@ -26,14 +26,14 @@ function Tweets(props) {
                           onClick = {() => handleCommentClick(data[i]['id'])}
                         />
                         <img 
-                          id = 'tweetThreeDots' 
-                          src = {require('./threeDots.png')}
+                          id = 'deleteButton' 
+                          src = {require('./x.png')}
                           onClick = {() => optionsClick(data[i]['id'])}
                         />
                       </div>;
         tweets.push(tweet);
       }
-    }
+    } 
     return tweets;
   }
   

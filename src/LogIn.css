@@ -15,8 +15,8 @@
   border-radius: 20px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-
-#uname, #pword {
+ 
+#logInUname, #logInPword {
   margin-bottom: 10px;
   height: 40px;
   width: 250px;

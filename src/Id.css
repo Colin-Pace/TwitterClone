@@ -22,8 +22,10 @@
   font-size: 18px;
 }
 
-#threeDots {
+#logOut {
   margin-left: 10px;
+  padding-top: 12px;
   height: 40px;
-  width: 40px;
+  width: 60px;
+  color: rgb(36, 138, 255);
 }
