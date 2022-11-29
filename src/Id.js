@@ -4,7 +4,7 @@ function Id(props) {
   const logOutClick = function() {
     props.logOutClick();
   }
-
+  
   return (
     <div className="Id">
       <img id = 'accountImage' src = {require('./account.png')}/>

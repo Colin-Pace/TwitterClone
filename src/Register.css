@@ -62,8 +62,11 @@
 #messages {
   margin-top: -380px;
   margin-left: 650px;
-  color: red;
-  /* border: 1px solid red; */
   padding: 10px;
   border-radius: 5px;
+}
+
+#message {
+  color: red;
+  font-weight: bold;
 }

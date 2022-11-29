@@ -12,6 +12,6 @@ function SidebarLeft(props) {
       />
     </div>
   );
-}
+} 
 
 export default SidebarLeft;

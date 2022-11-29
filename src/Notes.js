@@ -12,4 +12,9 @@ To do's:
       1. Add who to follow
 
 
+
+
+Bugs
+
+1. Name doesn't show up
 */

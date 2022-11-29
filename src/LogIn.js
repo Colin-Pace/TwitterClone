@@ -18,8 +18,6 @@ function LogIn(props) {
     e.preventDefault();
     const userNameAndPassword = [];
     userNameAndPassword.push(userName, password);
-    setUserName('');
-    setPassword('');
     props.logInFormSubmit(userNameAndPassword);
   }
 
@@ -38,6 +36,7 @@ function LogIn(props) {
             name="uname"
             placeholder = 'User name'
             maxlength="10"
+            autocomplete = 'off'
             onChange={handleNameChange}
           /><br/>
           <input 
@@ -46,6 +45,7 @@ function LogIn(props) {
             name="pword"
             placeholder = 'Password'
             maxlength="10"
+            autocomplete = 'off'
             onChange={handlePasswordChange}
           /><br/><br/>
           <input 

@@ -21,15 +21,15 @@ function App() {
     let storedData = localStorage.getItem("accounts");
     if (storedData.length === null || storedData === 0) {
       localStorage.setItem("accounts", JSON.stringify([]));
-    } else {
+    } else { 
       storedData = JSON.parse(storedData);
     }
     
     for (let i = 0; i < storedData.length; i++) {
       if (storedData[i]['name'] === userNameAndPassword[0] &&
           storedData[i]['password'] === userNameAndPassword[1]) {
-            setLoggedIn(true);
             setUserName(userNameAndPassword[0]);
+            setLoggedIn(true);
       }
     }
   }

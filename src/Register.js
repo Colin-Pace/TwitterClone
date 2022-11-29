@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import './Register.css';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 function generatePassword() {
   const charsOne = "abcdefghijklmnopqrstuvwxyz"
@@ -116,13 +116,13 @@ function Register(props) {
   let [toolTip, setToolTip] = useState(false);
   let [messages, setMessages] = useState('');
 
-  const handleNameChange = event => {
+  const handleNameChange = function(event) {
     setUserName(event.target.value);
     setMessages('');
   };
-
-  const handlePasswordChange = event => {
-    //console.log(isValidPassword(event.target.value));
+ 
+  const handlePasswordChange = function(event) {
+    setPassword(event.target.value);
     const remaining = isValidPassword(event.target.value);
     
     if (remaining === true) {
@@ -130,10 +130,9 @@ function Register(props) {
       setMessages('');
     } else {
       document.getElementById('pword').style.border = '1px solid red';
-      //setMessages(remaining)
       const result = [];
       for (let i = 0; i < remaining.length; i++) {
-        const message = <p>
+        const message = <p id = 'message'>
                           {remaining[i]}
                         </p>
         result.push(message);
@@ -163,6 +162,7 @@ function Register(props) {
     let storedData = localStorage.getItem("accounts");
     storedData = JSON.parse(storedData);
 
+
     for (let i = 0; i < storedData.length; i++) {
       if (userName === storedData[i]['name']) {
         return true;
@@ -170,22 +170,30 @@ function Register(props) {
     }
 
     return false;
-  }
+  } 
 
   const formSubmit = function(e) {
     e.preventDefault();
     const userNameAndPassword = [];
     userNameAndPassword.push(userName, password);
     const userNameAlreadyExists = checkForExistingUserName(userName);
+    
+    e.target.uname.value = '';
+    e.target.pword.value = '';
 
     if (userNameAlreadyExists === true) {
       setMessages("User name already exists");
     } else {
-    setUserName('');
-    setPassword('');
-    props.registerFormSubmit(userNameAndPassword);
-    }
+      props.registerFormSubmit(userNameAndPassword);
+    } 
   }
+
+  useEffect(() => {
+    let storedData = localStorage.getItem("accounts");
+    if (storedData === undefined || storedData === null) {
+      localStorage.setItem("accounts", JSON.stringify([]));
+    }
+  }, []);
 
 
   return (
