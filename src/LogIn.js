@@ -17,7 +17,7 @@ function LogIn(props) {
   const formSubmit = function(e) {
     e.preventDefault();
     const userNameAndPassword = [];
-    userNameAndPassword.push(userName, password);
+    userNameAndPassword.push(userName.trim(), password.trim());
     props.logInFormSubmit(userNameAndPassword);
   }
 

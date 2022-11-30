@@ -20,8 +20,8 @@ function Comments(props) {
                           </div>
                           <p id = 'commentText'>{data[i]['comment']}</p>
                           <img 
-                            id = 'commentEditButton' 
-                            src = {require('./threeDots.png')}
+                            id = 'commentDeleteButton' 
+                            src = {require('./x.png')}
                             onClick = {() => optionsClick(data[i]['id'])}
                           />
                         </div> 

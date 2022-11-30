@@ -30,9 +30,9 @@ function Comment(props) {
     setUpPage(); 
   }, []);
 
-  return (
+  return ( 
     <div className="Comment">
-      <Head 
+      <Head  
         tweet = {tweet}
         author = {author}
         handleGoBackClick = {props.handleGoBackClick}

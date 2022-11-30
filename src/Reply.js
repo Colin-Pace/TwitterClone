@@ -44,7 +44,7 @@ function Reply(props) {
 
         tweet['comments'].push(newComment);
         //setCommentCount(tweet['comments'].length);
-        //console.log(newComment);
+        console.log(newComment);
       }
     }
 

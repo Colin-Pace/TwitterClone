@@ -17,7 +17,7 @@ function UserTweets(props) {
         const tweet = <div id = 'tweet'>
                       <div id = 'userTweetImgAndTitle'>
                         <img id = 'userTweetImg' src = {require('./account.png')}/>
-                        <p>{props.userName}</p>
+                        <p id = 'userTweetName'>{props.userName}</p>
                       </div>
                       <p id = 'userTweetText'>{data['tweet']}</p>
                       <img 

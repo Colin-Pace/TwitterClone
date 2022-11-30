@@ -175,11 +175,12 @@ function Register(props) {
   const formSubmit = function(e) {
     e.preventDefault();
     const userNameAndPassword = [];
-    userNameAndPassword.push(userName, password);
+    userNameAndPassword.push(userName.trim(), password.trim());
     const userNameAlreadyExists = checkForExistingUserName(userName);
     
     e.target.uname.value = '';
     e.target.pword.value = '';
+    document.getElementById('pword').style.border = '1px solid rgb(214, 214, 214);'; // not working
 
     if (userNameAlreadyExists === true) {
       setMessages(<p id = 'message'>User name already exists</p>);

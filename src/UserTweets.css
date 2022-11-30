@@ -25,6 +25,10 @@
   margin-right: 10px;
 }
 
+#userTweetName {
+  font-weight: bold;
+}
+
 #userTweetText {
   margin-left: 55px;
 }
