@@ -9,7 +9,6 @@ function OtherUserProfile(props) {
     setFollowing(true);
     let storedData = localStorage.getItem("accounts");
     storedData = JSON.parse(storedData);
-    let account = undefined;
  
     for (let i = 0; i < storedData.length; i++) {
       if (storedData[i]['name'] === props.userName) {
@@ -22,6 +21,22 @@ function OtherUserProfile(props) {
 
   const followingButton = function() {
     setFollowing(false);
+    let storedData = localStorage.getItem("accounts");
+    storedData = JSON.parse(storedData);
+    let result = [];
+ 
+    for (let i = 0; i < storedData.length; i++) {
+      if (storedData[i]['name'] === props.userName) {
+        for (let j = 0; j < storedData[i]['following'].length; j++) {
+          if (storedData[i]['following'][j] !== props.otherUserName) {
+            result.push(storedData[i]['following'][j]);
+          }
+        }
+      }
+      storedData[i]['following'] = result;
+    }
+
+    localStorage.setItem("accounts", JSON.stringify(storedData));
   }
 
   useEffect(() => {
