@@ -1,0 +1,18 @@
+.Profile {
+  border-left: 1px solid rgb(202, 202, 202);
+  border-right: 1px solid rgb(202, 202, 202);
+}
+
+#profileImage {
+  height: 150px;
+  width: 150px;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+#profileName {
+  margin-left: 150px;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: -20px;
+}

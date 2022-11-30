@@ -1,0 +1,36 @@
+#userTweetTitle {
+  font-weight: bold;
+  border-bottom: 1px solid rgb(202, 202, 202);
+  padding-left: 15px;
+  padding-bottom: 10px;
+}
+
+#tweet {
+  border-bottom: 1px solid rgb(202, 202, 202);
+}
+
+#userTweetImg {
+  margin-left: 10px;
+}
+
+#userTweetImgAndTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#userTweetImg {
+  height: 35px;
+  width: 35px;
+  margin-right: 10px;
+}
+
+#userTweetText {
+  margin-left: 55px;
+}
+
+#userTweetCommentBubble {
+  height: 35px;
+  width: 35px;
+  margin-left: 15px;
+}

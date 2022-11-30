@@ -16,6 +16,7 @@ function App() {
   let [loggedIn, setLoggedIn] = useState(false);
   let [id, setId] = useState(0);
   let [userName, setUserName] = useState(undefined);
+  let [tabsDisplay, setTabsDisplay] = useState('home');
 
   const logInFormSubmit = function(userNameAndPassword) {
     let storedData = localStorage.getItem("accounts");
@@ -63,6 +64,14 @@ function App() {
     setLoggedIn(false);
   }
 
+  const handleHomeClick = function() {
+    setTabsDisplay('home');
+  }
+
+  const handleProfileClick = function() {
+    setTabsDisplay('profile');
+  }
+
   useEffect(() => {
     let storedData = localStorage.getItem("accounts");
     if (storedData === undefined || storedData === null) {
@@ -76,9 +85,12 @@ function App() {
         <SidebarLeft 
           userName = {userName} 
           logOutClick = {logOutClick}
+          handleHomeClick = {handleHomeClick}
+          handleProfileClick = {handleProfileClick}
         />
         <Center
-          userName = {userName}
+          userName = {userName} 
+          tabsDisplay = {tabsDisplay}
         />
         <SidebarRight/>      
       </div>

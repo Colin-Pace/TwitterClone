@@ -3,10 +3,11 @@ import Home from './Home';
 import Scroll from './Scroll';
 import {useState, useEffect} from 'react';
 import Comment from './Comment';
+import Profile from './Profile';
 
 function Center(props) {
   let [tweet, setTweet] = useState(undefined);
-  let [homeAndScroll, setHomeAndScroll] = useState(true);
+  let [display, setDisplay] = useState('home');
   let [tweets, setTweets] = useState(undefined);
   let [id, setID] = useState(0);
   let [editId, setEditId] = useState(undefined);
@@ -17,7 +18,7 @@ function Center(props) {
 
   const handleCommentClick = function(id) {
     setEditId(id);
-    setHomeAndScroll(false);
+    setDisplay('comment');
   }
 
   const handleOptionsClick = function(id) {
@@ -57,7 +58,7 @@ function Center(props) {
   }; 
 
   const handleGoBackClick = function() {
-    setHomeAndScroll(true);
+    setDisplay('home');
   }
 
   useEffect(() => {
@@ -66,13 +67,15 @@ function Center(props) {
       localStorage.setItem("tweets", JSON.stringify([]));
     }
 
+    setDisplay(props.tabsDisplay);
+
     populateTweets();
-  }, []);
+  }, [props.tabsDisplay, ]);
 
   return (
     <div className = "Center">
       {
-        homeAndScroll === true ?
+        display === 'home' ?
           <div>
             <Home
               getTweet = {getTweet}
@@ -87,11 +90,17 @@ function Center(props) {
               optionsClick = {handleOptionsClick}
             />
           </div>
-        :
+        : display === 'comment' ?
           <div>
             <Comment
               editId = {editId}
               handleGoBackClick = {handleGoBackClick}
+              userName = {props.userName}
+            />
+          </div>
+          :
+          <div>
+            <Profile
               userName = {props.userName}
             />
           </div>

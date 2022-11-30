@@ -1,20 +1,21 @@
 import './Tabs.css';
 
-function Tabs() {
+function Tabs(props) {
+  const handleHomeClick = function() {
+    props.handleHomeClick();
+  }
+
+  const handleProfileClick = function() {
+    props.handleProfileClick();
+  }
+  
   return (
     <div className="Tabs">
       <img id = "bird" src = {require('./bird.png')}></img>
 
       <div id = "menuItems">
-        <p>Home</p>
-        <p>Explore</p>
-        <p>Notifications</p>
-        <p>Messages</p>
-        <p>Bookmarks</p>
-        <p>Lists</p>
-        <p>Profile</p>
-        <p>More</p>
-        <button id = "tweetButton">Tweet</button>
+        <p onClick = {handleHomeClick}>Home</p>
+        <p onClick = {handleProfileClick}>Profile</p>
       </div>
     </div>
   );

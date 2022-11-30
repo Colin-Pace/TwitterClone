@@ -5,7 +5,10 @@ import Id from './Id';
 function SidebarLeft(props) {
   return (
     <div className="SidebarLeft">
-      <Tabs/>
+      <Tabs
+        handleHomeClick = {props.handleHomeClick}
+        handleProfileClick = {props.handleProfileClick}
+      />
       <Id 
         userName = {props.userName}
         logOutClick = {props.logOutClick}

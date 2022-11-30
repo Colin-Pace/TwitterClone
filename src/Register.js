@@ -182,7 +182,7 @@ function Register(props) {
     e.target.pword.value = '';
 
     if (userNameAlreadyExists === true) {
-      setMessages("User name already exists");
+      setMessages(<p id = 'message'>User name already exists</p>);
     } else {
       props.registerFormSubmit(userNameAndPassword);
     } 
