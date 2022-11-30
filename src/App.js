@@ -55,7 +55,7 @@ function App() {
       "id": id,
       "name": userNameAndPassword[0],
       "password": userNameAndPassword[1],
-      "following": []
+      "following": [userNameAndPassword[0]]
     };
 
     storedData.push(newEntry);

@@ -32,8 +32,8 @@ function OtherUserProfile(props) {
             result.push(storedData[i]['following'][j]);
           }
         }
+        storedData[i]['following'] = result;
       }
-      storedData[i]['following'] = result;
     }
 
     localStorage.setItem("accounts", JSON.stringify(storedData));
