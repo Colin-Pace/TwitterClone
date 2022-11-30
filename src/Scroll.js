@@ -11,6 +11,7 @@ function Scroll(props) {
             tweets = {props.tweets}
             handleCommentClick = {props.handleCommentClick}
             optionsClick = {props.optionsClick}
+            userName = {props.userName}
           /> 
         </div>
       }

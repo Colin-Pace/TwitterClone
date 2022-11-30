@@ -89,6 +89,7 @@ function Center(props) {
               tweets = {tweets}
               handleCommentClick = {handleCommentClick}
               optionsClick = {handleOptionsClick}
+              userName = {props.userName}
             />
           </div>
         : display === 'comment' ?
