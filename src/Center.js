@@ -70,8 +70,6 @@ function Center(props) {
 
     setDisplay(props.tabsDisplay);
 
-    console.log(props.otherUserName);
-
     populateTweets();
   }, [props.tabsDisplay, ]);
 
@@ -111,6 +109,7 @@ function Center(props) {
           <div>
             <OtherUserProfile
               otherUserName = {props.otherUserName}
+              userName = {props.userName}
             />
           </div>
       }

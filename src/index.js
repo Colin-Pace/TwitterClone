@@ -16,12 +16,12 @@ root.render(
 
     /       /
 Register  Login
-                    /                   |                                   \
-               SidebarLeft              Center                          SidebarRight
-                /       |         |    |   \          \                    |
-            Tabs        Id      Home Scroll (Comment)  Profile         What's happening
-                                      |        |  | \        \
-                                    Tweets    Head|   \     UserTweets
+                    /                   |                                      \
+               SidebarLeft              Center                                SidebarRight
+                /       |         |    |   \          \          \                |
+            Tabs        Id      Home Scroll (Comment)  Profile    OUP       What's happening
+                                      |        |  | \        \        \
+                                    Tweets    Head|   \  UserTweets    OUT
                                                 Reply |
                                                     Thread
                                                       |

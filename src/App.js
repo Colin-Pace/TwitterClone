@@ -54,7 +54,8 @@ function App() {
     const newEntry = {
       "id": id,
       "name": userNameAndPassword[0],
-      "password": userNameAndPassword[1]
+      "password": userNameAndPassword[1],
+      "following": []
     };
 
     storedData.push(newEntry);

@@ -30,6 +30,7 @@ function SidebarRight(props) {
         type = 'text' 
         value = {searchName}
         placeholder = 'Search Twitter'
+        autocomplete = 'off'
         onChange={(event) => setSearchName(event.target.value)}
         onKeyPress = {(event) => {
           event.key === "Enter" && sendMessage();}}

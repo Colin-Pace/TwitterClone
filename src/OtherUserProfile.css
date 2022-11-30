@@ -1,0 +1,55 @@
+.OtherUserProfile {
+  border-left: 1px solid rgb(202, 202, 202);
+  border-right: 1px solid rgb(202, 202, 202);
+}
+
+#otherUserProfileImage {
+  height: 150px;
+  width: 150px;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+#otherUserProfileName {
+  margin-left: 150px;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: -20px;
+}
+
+#followButton {
+  float: right;
+  margin-top: -50px;
+  margin-right: 20px;
+  height: 40px;
+  width: 100px;
+  border-radius: 25px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+}
+
+#followButton:hover {
+  background-color: gray;
+}
+
+#followingButton {
+  float: right;
+  margin-top: -50px;
+  margin-right: 20px;
+  height: 40px;
+  width: 120px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid black;
+  /* padding: 15px; */
+  background-color: white;
+  color: black;
+}
+
+#followingButton:hover {
+  background-color: rgb(248, 72, 102);
+}

@@ -16,7 +16,7 @@ function Home(props) {
       "tweet": tweet,
       "comments": []
     };
-
+ 
     setTweet(""); 
 
     let storedData = localStorage.getItem("tweets");
