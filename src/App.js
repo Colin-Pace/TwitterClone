@@ -17,6 +17,7 @@ function App() {
   let [id, setId] = useState(0);
   let [userName, setUserName] = useState(undefined);
   let [tabsDisplay, setTabsDisplay] = useState('home');
+  let [otherUserName, setOtherUserName] = useState(undefined);
 
   const logInFormSubmit = function(userNameAndPassword) {
     let storedData = localStorage.getItem("accounts");
@@ -72,6 +73,11 @@ function App() {
     setTabsDisplay('profile');
   }
 
+  const handleSearchName = function(name) {
+    setTabsDisplay('otherUserProfile');
+    setOtherUserName(name);
+  }
+
   useEffect(() => {
     let storedData = localStorage.getItem("accounts");
     if (storedData === undefined || storedData === null) {
@@ -91,8 +97,11 @@ function App() {
         <Center
           userName = {userName} 
           tabsDisplay = {tabsDisplay}
+          otherUserName = {otherUserName}
         />
-        <SidebarRight/>      
+        <SidebarRight
+          handleSearchName = {handleSearchName}
+        />      
       </div>
     ); 
   } else {

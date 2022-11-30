@@ -4,6 +4,7 @@ import Scroll from './Scroll';
 import {useState, useEffect} from 'react';
 import Comment from './Comment';
 import Profile from './Profile';
+import OtherUserProfile from './OtherUserProfile';
 
 function Center(props) {
   let [tweet, setTweet] = useState(undefined);
@@ -69,6 +70,8 @@ function Center(props) {
 
     setDisplay(props.tabsDisplay);
 
+    console.log(props.otherUserName);
+
     populateTweets();
   }, [props.tabsDisplay, ]);
 
@@ -98,10 +101,16 @@ function Center(props) {
               userName = {props.userName}
             />
           </div>
-          :
+          : display === 'profile' ?
           <div>
             <Profile
               userName = {props.userName}
+            />
+          </div>
+          : 
+          <div>
+            <OtherUserProfile
+              otherUserName = {props.otherUserName}
             />
           </div>
       }
