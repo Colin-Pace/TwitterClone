@@ -1,6 +1,6 @@
 import './OtherUserProfile.css';
 import OtherUserTweets from './OtherUserTweets';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 function OtherUserProfile(props) { 
   let [following, setFollowing] = useState(false);
@@ -9,8 +9,8 @@ function OtherUserProfile(props) {
     setFollowing(true);
     let storedData = localStorage.getItem("accounts");
     storedData = JSON.parse(storedData);
-
     let account = undefined;
+ 
     for (let i = 0; i < storedData.length; i++) {
       if (storedData[i]['name'] === props.userName) {
         storedData[i]['following'].push(props.otherUserName);
@@ -23,6 +23,22 @@ function OtherUserProfile(props) {
   const followingButton = function() {
     setFollowing(false);
   }
+
+  useEffect(() => {
+    setFollowing(false);
+
+    let storedData = localStorage.getItem("accounts");
+    storedData = JSON.parse(storedData);
+    for (let i = 0; i < storedData.length; i++) {
+      if (props.userName === storedData[i]['name']) {
+        for (let j = 0; j < storedData[i]['following'].length; j++) {
+          if (storedData[i]['following'][j] === props.otherUserName) {
+            setFollowing(true);
+          }
+        }
+      }
+    }
+  });
 
   return (
     <div className="OtherUserProfile">
