@@ -59,6 +59,7 @@ function Center(props) {
   }; 
 
   const handleGoBackClick = function() {
+    populateTweets();
     setDisplay('home');
   }
 
@@ -71,7 +72,7 @@ function Center(props) {
     setDisplay(props.tabsDisplay);
 
     populateTweets();
-  }, [props.tabsDisplay, ]);
+  }, [props.tabsDisplay]);
 
   return (
     <div className = "Center">

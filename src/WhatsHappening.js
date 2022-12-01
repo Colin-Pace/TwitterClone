@@ -43,7 +43,7 @@ function WhatsHappening() {
     <div className="WhatsHappening">
       <div id = 'whatsHappening'>
         <p id = 'wHTitle'>What's happening</p>
-
+      
       </div>
     </div>
   );

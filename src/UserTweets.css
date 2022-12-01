@@ -38,3 +38,10 @@
   width: 35px;
   margin-left: 15px;
 }
+
+#userTweetsDeleteButton {
+  margin-left: 530px;
+  margin-top: 10px;
+  height: 15px;
+  width: 15px;
+}

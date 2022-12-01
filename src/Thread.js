@@ -19,7 +19,7 @@ function Thread(props) {
       if (storedData[i]['id'] === props.editId) {
         tweet = storedData[i];
       }
-    }
+    } 
 
     return tweet['comments'];
   }

@@ -44,7 +44,6 @@ function Reply(props) {
 
         tweet['comments'].push(newComment);
         //setCommentCount(tweet['comments'].length);
-        console.log(newComment);
       }
     }
 
@@ -52,7 +51,7 @@ function Reply(props) {
     localStorage.setItem("tweets", JSON.stringify(storedData));
     props.populateComments();
   };
-
+ 
   return (
     <div className="Reply">
       <div id = "imgAndArea">

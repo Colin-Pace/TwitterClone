@@ -9,7 +9,7 @@ root.render(
     <App />
   </React.StrictMode>
 );
- 
+  
 /* Component tree
  
                                       App
@@ -19,7 +19,7 @@ Register  Login
                     /                   |                                      \
                SidebarLeft              Center                                SidebarRight
                 /       |         |    |   \          \          \                |
-            Tabs        Id      Home Scroll (Comment)  Profile    OUP       What's happening
+            Tabs        Id      Home Scroll (Comment)  (Profile)  (OUP)       What's happening
                                       |        |  | \        \        \
                                     Tweets    Head|   \  UserTweets    OUT
                                                 Reply |
