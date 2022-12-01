@@ -180,7 +180,7 @@ function Register(props) {
     
     e.target.uname.value = '';
     e.target.pword.value = '';
-    document.getElementById('pword').style.border = '1px solid rgb(214, 214, 214);'; // not working
+    document.getElementById('pword').style.border = '1px solid black;'; // not working
 
     if (userNameAlreadyExists === true) {
       setMessages(<p id = 'message'>User name already exists</p>);

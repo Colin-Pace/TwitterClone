@@ -25,12 +25,6 @@ function Reply(props) {
       if (storedData[i]['id'] === props.editId) {
         tweet = storedData[i]; 
 
-        // const newComment = {
-        //   "id": id, 
-        //   'userName': props.userName,
-        //   "comment": reply,
-        // };
-
         let largest = 0;
         for (let j = 0; j < tweet['comments'].length; j++) {
           if (tweet['comments'][j]['id'] > largest) {
