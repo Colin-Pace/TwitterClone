@@ -3,7 +3,7 @@ import {useState} from 'react';
 
 function Reply(props) {
   let [reply, setReply] = useState('');
-  let [id, setId] = useState(0);
+  //let [id, setId] = useState(0);
   let [commentCount, setCommentCount] = useState(0);
 
   const handleChange = event => {
@@ -25,11 +25,11 @@ function Reply(props) {
       if (storedData[i]['id'] === props.editId) {
         tweet = storedData[i]; 
 
-        const newComment = {
-          "id": id, 
-          'userName': props.userName,
-          "comment": reply,
-        };
+        // const newComment = {
+        //   "id": id, 
+        //   'userName': props.userName,
+        //   "comment": reply,
+        // };
 
         let largest = 0;
         for (let j = 0; j < tweet['comments'].length; j++) {
@@ -38,8 +38,13 @@ function Reply(props) {
           }
         }
 
-        setId(largest + 1);
+        const newComment = {
+          "id": largest + 1, 
+          'userName': props.userName,
+          "comment": reply,
+        };
 
+        console.log(newComment);
         
 
         tweet['comments'].push(newComment);
