@@ -38,9 +38,6 @@ function Reply(props) {
           "comment": reply,
         };
 
-        console.log(newComment);
-        
-
         tweet['comments'].push(newComment);
         //setCommentCount(tweet['comments'].length);
       }

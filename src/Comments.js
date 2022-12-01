@@ -1,8 +1,8 @@
 import './Comments.css';
 
 function Comments(props) {
-  const optionsClick = function(id) {
-    props.optionsClick(id);
+  const deleteCommentClick = function(id) {
+    props.deleteCommentClick(id, props.editId);
   }
 
   const makeComments = function() {
@@ -22,7 +22,7 @@ function Comments(props) {
                           <img 
                             id = 'commentDeleteButton' 
                             src = {require('./x.png')}
-                            onClick = {() => optionsClick(data[i]['id'])}
+                            onClick = {() => deleteCommentClick(data[i]['id'])}
                           />
                         </div> 
         result.push(comment);

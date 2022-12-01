@@ -45,6 +45,7 @@ function Comment(props) {
       <Thread 
         thread = {thread}
         editId = {props.editId}
+        populateComments = {populateComments}
       />
     </div>
   );
