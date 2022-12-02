@@ -3,7 +3,7 @@ import SidebarLeft from './SidebarLeft';
 import Center from './Center';
 import SidebarRight from './SidebarRight';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   Link
