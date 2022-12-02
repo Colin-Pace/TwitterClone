@@ -4,13 +4,8 @@ import React, { useState, useEffect } from 'react';
 
 function WhatsHappening() {
   const makeCards = function(data) {
-    const cards = [];
-    for (let i = 0; i < 5; i++) {
+    console.log(data);
 
-      const card = <div>
-                     
-                   </div>
-    }
   }
 
   const getNews = function() {
@@ -26,8 +21,7 @@ function WhatsHappening() {
 			})
 
       .then(response => {
-        ///console.log(response["articles"]);
-        //makeCards(response);
+        makeCards(response);
       })
 
 			.catch(error => {

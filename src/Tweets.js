@@ -19,7 +19,7 @@ function Tweets(props) {
     const data = props.tweets;
     if (data !== undefined) { 
 
-      let tweetCount = 0;
+      //let tweetCount = 0;
       for (let i = data.length - 1; i > -1; i--) {
         let tweetCount = 0;
         for (let l = 0; l < data[i]['comments'].length; l++) {

@@ -4,3 +4,15 @@
   padding-left: 25px;
   padding-bottom: 10px;
 }
+
+#otherUserTweetCommentBubble {
+  height: 35px;
+  width: 35px;
+  margin-left: 50px;
+  padding: 5px;
+}
+
+#otherUserTweetImgAndNumber {
+  display: flex;
+  flex-direction: row;
+}
