@@ -6,7 +6,7 @@ function SidebarRight(props) {
   let [searchName, setSearchName] = useState(undefined);
 
   const sendMessage = function() {
-    let search = searchName;
+    let search = searchName.trim();
     setSearchName("");
 
     let storedData = localStorage.getItem("accounts");
