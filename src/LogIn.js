@@ -1,10 +1,11 @@
 import './LogIn.css';
 import { Link } from "react-router-dom";
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 function LogIn(props) {
   let [userName, setUserName] = useState('');
   let [password, setPassword] = useState('');
+  let [messages, setMessages] = useState('');
 
   const handleNameChange = event => {
     setUserName(event.target.value);
@@ -20,6 +21,19 @@ function LogIn(props) {
     userNameAndPassword.push(userName.trim(), password.trim());
     props.logInFormSubmit(userNameAndPassword);
   }
+
+  const handleToRegisterPage = function() {
+    props.toRegisterPage();
+  }
+
+  useEffect(() => {
+    if (props.incorrectPassword === true) {
+      setMessages('Incorrect password');
+    } else {
+      setMessages('')
+    }
+
+  }, [props.incorrectPassword])
 
   return (
     <div className="LogIn">
@@ -57,10 +71,14 @@ function LogIn(props) {
 
         <Link 
           to = "/register"
-          id = 'registerLink'  
+          id = 'registerLink' 
+          onClick = {handleToRegisterPage}
         >Register</Link>
 
+      </div>
 
+      <div id = 'loginMessages'>
+        { messages }
       </div>
 
     </div>

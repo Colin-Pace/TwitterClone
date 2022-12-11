@@ -5,7 +5,7 @@ import SidebarRight from './SidebarRight';
 import {
   HashRouter as Router,
   Routes,
-  Route,
+  Route, 
   Link
 } from "react-router-dom";
 import {useState, useEffect} from 'react';
@@ -18,6 +18,8 @@ function App() {
   let [userName, setUserName] = useState(undefined);
   let [tabsDisplay, setTabsDisplay] = useState('home');
   let [otherUserName, setOtherUserName] = useState(undefined);
+  let [incorrectPassword, setIncorrectPassword] = useState(false);
+  let [loginPage, setLoginPage] = useState(false);
 
   const logInFormSubmit = function(userNameAndPassword) {
     let storedData = localStorage.getItem("accounts");
@@ -32,6 +34,8 @@ function App() {
           storedData[i]['password'] === userNameAndPassword[1]) {
             setUserName(userNameAndPassword[0]);
             setLoggedIn(true);
+      } else if (storedData[i]['name'] === userNameAndPassword[0]) {
+        setIncorrectPassword(true);
       }
     }
   }
@@ -79,12 +83,18 @@ function App() {
     setOtherUserName(name);
   }
 
+  const toRegisterPage = function() {
+    setLoginPage(false);
+    setIncorrectPassword(false);
+  }
+
   useEffect(() => {
     let storedData = localStorage.getItem("accounts");
     if (storedData === undefined || storedData === null) {
       localStorage.setItem("accounts", JSON.stringify([]));
     }
-  }, []);
+    setIncorrectPassword(false);
+  }, [loggedIn, loginPage]);
 
   if (loggedIn === true) { 
     return (
@@ -111,7 +121,9 @@ function App() {
         <Router>
           <Routes>
             <Route path = '/' element = {<LogIn
-              logInFormSubmit = {logInFormSubmit}  
+              logInFormSubmit = {logInFormSubmit}
+              incorrectPassword = {incorrectPassword}
+              toRegisterPage = {toRegisterPage}
             />}/>
             <Route path = '/register' element = {<Register
               registerFormSubmit = {registerFormSubmit}
